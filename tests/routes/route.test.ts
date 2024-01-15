@@ -46,7 +46,7 @@ describe('routing', () => {
     test('handles nuxt routing', async () => {
         const component = await mountSuspended(ProductDetailsPage, { route: '/products/1' })
         // console.log(component.html())
-        console.log("useroute"+ useRoute())
+        // console.log("useroute"+ useRoute())
         expect(component.html()).toContain("Product description")
         expect(component.html()).toContain("Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops")
 

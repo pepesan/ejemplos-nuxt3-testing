@@ -8,7 +8,7 @@ describe('App', async () => {
     await setup({
         server: true,
         browser: true,
-        setupTimeout: 10000,
+        setupTimeout: 20000,
         runner: "vitest",
         browserOptions: {
             type: "chromium"
