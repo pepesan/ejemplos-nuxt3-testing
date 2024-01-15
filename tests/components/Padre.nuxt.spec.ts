@@ -6,7 +6,7 @@ import { describe, test, expect, vi } from "vitest";
 describe("FetchComponent.vue", () => {
 
     test("should renders is page content is correct",async  () => {
-        const testMessage = "Hijo";
+        const testMessage = "PadreHijo";
         const wrapper =await mountSuspended(Padre)
         // // console.log(wrapper.text());
         // // console.log(wrapper.html());
