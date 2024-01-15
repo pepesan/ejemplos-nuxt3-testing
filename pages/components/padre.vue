@@ -3,10 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <h2>Padre</h2>
-    <Hijo></Hijo>
-  </div>
+  <Padre></Padre>
 </template>
 
 <style scoped>

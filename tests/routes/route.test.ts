@@ -1,38 +1,36 @@
-import {mount} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
-import {createRouter, createWebHistory} from 'vue-router';
-import AppComponent from '@/pages/index.vue';
-import AboutComponent from '@/pages/about.vue';
+import { describe, expect, test } from 'vitest'
 
-describe("navigating", () => {
-  test("should navigate to /about", async () => {
-    const router = createRouter({
-        history: createWebHistory(),
-        routes: [
-          {
-            path: "/",
-            name: "Home",
-            component: () => import("@/pages/index.vue")
-          },
-          {
-            path: "/about",
-            name: "About",
-            component: () => import("@/pages/about.vue")
-          }
-        ]
-        })
-      await router.push('/about')
-      await router.isReady()
-      const wrapper = mount(AppComponent, {
-          global: {
-              plugins: [router]
-          }
-      })
-      // console.log(router.currentRoute.value)
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 
-      expect(router.currentRoute.value.name).toBe('About')
-      //console.log(await wrapper.findComponent(AboutComponent))
-      // expect(wrapper.findComponent(AboutComponent).exists()).toBe(true)
-  })
+import Home from '../../pages/index.vue'
+import About from '../../pages/about.vue'
+import PadrePage from '../../pages/components/padre.vue'
+
+describe('routing', () => {
+    test('defaults to index page', async () => {
+        console.log(useRoute())
+        expect(useRoute().matched[0].meta).toMatchInlineSnapshot(`
+      {}
+    `)
+    })
+
+    test('allows pushing to other pages', async () => {
+        await navigateTo('/about')
+        expect(useNuxtApp().$router.currentRoute.value.path).toEqual('/about')
+        await nextTick()
+        expect(useRoute().path).toEqual('/about')
+    })
+
+    test('handles nuxt routing', async () => {
+        const component = await mountSuspended(Home, { route: '/' })
+        expect(component.html()).toContain("Home")
+    })
+    test('handles nuxt routing', async () => {
+        const component = await mountSuspended(About, { route: '/about' })
+        expect(component.html()).toContain("About")
+    })
+    test('handles nuxt routing', async () => {
+        const component = await mountSuspended(PadrePage, { route: '/components/padre' })
+        expect(component.html()).toContain("Padre")
+    })
 })
-
