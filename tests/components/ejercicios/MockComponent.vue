@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <h2>Hija</h2>
+    Mocked
   </div>
 </template>
 

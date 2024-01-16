@@ -17,7 +17,12 @@ describe("useTodoStore", ()=>{
         expect(store).toBeDefined()
     })
     test("init with no items", ()=>{
+        expect(store.items).toBeDefined()
+        expect(store.items).toBeTypeOf('object')
+        expect(store.items).toBeInstanceOf(Array)
+        expect(store.items).toStrictEqual([])
         expect(store.items.length).toBe(0)
+
     })
     test("creates a todo", ()=>{
         store.add({

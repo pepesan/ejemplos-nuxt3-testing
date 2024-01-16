@@ -55,8 +55,9 @@ export const useTodoStore = defineStore('todoStore',{
             this.items = this.items.filter(todo =>  todo.id !== id)
         },
         update (id: string, update: TodoUpdate){
-            // this.items = this.items.map(item => item.id === id ? {...item, ...update, update1At: new Date()}: item)
+            // localiza el índice
             const index = this.items.findIndex(item => item.id === id)
+            // hace la modificación
             this.items[index] = {...this.items[index], ...update, updatedAt: new Date()}
         }
     }

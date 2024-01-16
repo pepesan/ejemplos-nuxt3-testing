@@ -10,5 +10,4 @@ describe("runs", ()=>{
         const store = useTodoStore();
         expect(store).toBeDefined()
     })
-
 })
