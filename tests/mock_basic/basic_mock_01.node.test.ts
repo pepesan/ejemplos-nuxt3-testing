@@ -1,6 +1,10 @@
 // @vitest-environment node
 
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import {
+    beforeAll,
+    afterAll,
+    afterEach,
+    beforeEach, describe, expect, test, vi } from 'vitest'
 
 const businessHours = [9, 17]
 
@@ -15,17 +19,25 @@ function purchase() {
 }
 
 describe('purchasing flow', () => {
+    beforeAll(() => {
+        console.log("antes de todas las pruebas")
+    })
+    afterAll(() => {
+        console.log("después de todas las pruebas")
+    })
     beforeEach(() => {
+        console.log("antes de cada prueba")
         // tell vitest we use mocked time
         vi.useFakeTimers()
     })
 
     afterEach(() => {
+        console.log("después de cada prueba")
         // restoring date after each test run
         vi.useRealTimers()
     })
 
-    it('allows purchases within business hours', () => {
+    test('allows purchases within business hours', () => {
         // set hour within business hours
         const date = new Date(2000, 1, 1, 13)
         vi.setSystemTime(date)
@@ -34,7 +46,7 @@ describe('purchasing flow', () => {
         expect(purchase()).toEqual({ message: 'Success' })
     })
 
-    it('disallows purchases outside of business hours', () => {
+    test('disallows purchases outside of business hours', () => {
         // set hour outside business hours
         const date = new Date(2000, 1, 1, 19)
         vi.setSystemTime(date)

@@ -1,6 +1,6 @@
 // @vitest-environment node
 
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, test, vi } from 'vitest'
 
 function getLatest(index = messages.items.length - 1) {
     return messages.items[index]
@@ -19,7 +19,7 @@ describe('reading messages', () => {
         vi.restoreAllMocks()
     })
 
-    it('should get the latest message with a spy', () => {
+    test('should get the latest message with a spy', () => {
         const spy = vi.spyOn(messages, 'getLatest')
         expect(spy.getMockName()).toEqual('getLatest')
 
@@ -35,7 +35,7 @@ describe('reading messages', () => {
         expect(spy).toHaveBeenCalledTimes(2)
     })
 
-    it('should get with a mock', () => {
+    test('should get with a mock', () => {
         const mock = vi.fn().mockImplementation(getLatest)
 
         expect(mock()).toEqual(messages.items[messages.items.length - 1])
