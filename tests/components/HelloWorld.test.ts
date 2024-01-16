@@ -10,7 +10,8 @@ describe("HelloWorld.vue", () => {
         const wrapper = mount(HelloWorld, {
             props: { message },
         });
-
+        console.log(wrapper.text());
+        console.log(wrapper.html());
         expect(wrapper.text()).toBe(testMessage);
     });
 

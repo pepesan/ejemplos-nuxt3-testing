@@ -14,5 +14,6 @@ mockComponent('Hijo', async () => {
 
 test('should mock', async () => {
     const component = await mount(Padre)
+    console.log(component.html())
     expect(component.html()).toContain("Mocked")
 })

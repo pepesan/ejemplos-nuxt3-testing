@@ -1,7 +1,7 @@
 import {render, fireEvent, screen} from '@testing-library/vue'
 import MiContador from '../../components/MiContador.vue'
 import { describe, test, expect } from "vitest";
-describe('MiContador2', () => {
+describe('MiContador', () => {
     test('increments value on click', async () => {
         render(MiContador)
 
