@@ -6,6 +6,7 @@
         <ul class="flex gap-4">
           <li><NuxtLink to="/">Home</NuxtLink></li>
           <li><NuxtLink to="/about">About</NuxtLink></li>
+          <li><NuxtLink to="/components/props">Props</NuxtLink></li>
           <li><NuxtLink to="/events">Eventos</NuxtLink></li>
           <li><NuxtLink to="/fetch">Fetch</NuxtLink></li>
           <li><NuxtLink to="/fetch/async">Async</NuxtLink></li>

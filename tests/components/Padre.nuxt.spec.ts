@@ -3,7 +3,7 @@ import {mountSuspended} from "@nuxt/test-utils/runtime";
 import Padre from "../../components/Padre.vue";
 import { describe, test, expect, vi } from "vitest";
 
-describe("FetchComponent.vue", () => {
+describe("Padre.vue", () => {
 
     test("should renders is page content is correct",async  () => {
         const testMessage = "PadreHijo";
