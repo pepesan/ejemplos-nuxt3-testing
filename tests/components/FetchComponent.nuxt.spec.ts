@@ -2,18 +2,11 @@
 import {renderSuspended, mountSuspended} from "@nuxt/test-utils/runtime";
 import { screen, fireEvent, waitFor } from '@testing-library/vue'
 import FetchComponent from "../../components/FetchComponent.vue";
-import { describe, test, expect, vi } from "vitest";
+import { describe, test, expect} from "vitest";
 
 describe("FetchComponent.vue", () => {
 
     test("should renders is page content is correct",async  () => {
-        vi.stubGlobal('useFetch', () => Promise.resolve({
-            data: [
-                {
-                    "dato": "valor"
-                }
-            ]
-        }))
         const testMessage = "Petición HTTP con useFetchActualizar";
         await renderSuspended(FetchComponent)
         expect(screen.getByText('Actualizar')).toBeDefined()
