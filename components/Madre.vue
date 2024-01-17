@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Hija from "~/components/ejercicios/Hija.vue";
+import Hija from "~/components/Hija.vue";
 </script>
 
 <template>

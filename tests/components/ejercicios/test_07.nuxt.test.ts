@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { mockComponent, mountSuspended } from '@nuxt/test-utils/runtime'
-import Madre from '../../../components/ejercicios/Madre.vue'
-import Hija from '../../../components/ejercicios/Hija.vue'
+import Madre from '../../../components/Madre.vue'
+import Hija from '../../../components/Hija.vue'
 import {mount, shallowMount} from "@vue/test-utils";
 
 describe("mockComponent", () => {
@@ -19,7 +19,7 @@ describe("mockComponent", () => {
         console.log(wrapper.html())
         // expect(wrapper.html()).toContain("Hija")
         // BUG?
-        // expect(wrapper.html()).toContain("Mocked")
+        expect(wrapper.html()).toContain("Mocked")
     })
 })
 

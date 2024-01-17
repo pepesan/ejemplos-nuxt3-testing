@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import Madre from '../../../components/ejercicios/Madre.vue'
+import Madre from '../../../components/Madre.vue'
 
 import {mountSuspended} from "@nuxt/test-utils/runtime";
 import {mount} from "@vue/test-utils";
