@@ -1,6 +1,6 @@
 // @vitest-environment nuxt
-import {renderSuspended} from "@nuxt/test-utils/runtime";
-import { screen, fireEvent } from '@testing-library/vue'
+import {renderSuspended, mountSuspended} from "@nuxt/test-utils/runtime";
+import { screen, fireEvent, waitFor } from '@testing-library/vue'
 import FetchComponent from "../../components/FetchComponent.vue";
 import { describe, test, expect, vi } from "vitest";
 
@@ -19,7 +19,8 @@ describe("FetchComponent.vue", () => {
         expect(screen.getByText('Actualizar')).toBeDefined()
         const button = screen.getByText('Actualizar')
         await fireEvent.click(button)
-        // falta comprobar que funciona la petición
-        // expect(screen.getByText('valor')).toBeDefined()
+        await waitFor(() => expect(screen.findByText('PSOE')).toBeDefined());
+        screen.findByText('PSOE')
+        expect(screen.findByText('PSOE')).toBeDefined()
     });
 });

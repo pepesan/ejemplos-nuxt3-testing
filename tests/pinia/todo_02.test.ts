@@ -39,7 +39,11 @@ describe("useTodoStore", ()=>{
         const item = store.items[0]
         expect(item).toBeDefined()
         const todo = store.getById(item.id)
+        expect(todo.id).toBe(item.id)
         expect(todo.title).toBe("Compra huevos")
+        expect(todo.done).toBe(item.done)
+        expect(todo.createdAt).toBe(item.createdAt)
+        expect(todo.updatedAt).toBe(item.updatedAt)
     })
     test("get Ordered Todos", ()=>{
         const items = [
@@ -65,6 +69,8 @@ describe("useTodoStore", ()=>{
         store.add({title:"test"})
         const todo = store.items[0];
         store.remove(todo.id)
+        expect(store.items).toBeDefined()
+        expect(store.items).toStrictEqual([])
         expect(store.items.length).toBe(0);
     })
     test("update a todo", ()=>{
