@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest'
-import { mockNuxtImport } from '@nuxt/test-utils/runtime'
 import {ref} from "vue";
 import MockAdapter from 'axios-mock-adapter';
 import axios from "axios";
@@ -12,7 +11,6 @@ const retData = [
 
 describe("useApi", () => {
     it('should mock core nuxt composables', async () => {
-        const mockData = { message: 'Hello from API!' };
         let mock = new MockAdapter(axios);
         const url = "https://cursosdedesarrollo.com/pactometro/resultados.json"
         mock.onGet(url).reply(200, retData);
