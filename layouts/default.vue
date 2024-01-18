@@ -11,6 +11,7 @@
           <li><NuxtLink to="/fetch">Fetch</NuxtLink></li>
           <li><NuxtLink to="/fetch/async">Async</NuxtLink></li>
           <li><NuxtLink to="/composables">Composable</NuxtLink></li>
+          <li><NuxtLink to="/composables/axios">Axios</NuxtLink></li>
           <li><NuxtLink to="/plugin">Plugin</NuxtLink></li>
           <li><NuxtLink to="/counter">counter</NuxtLink></li>
           <li><NuxtLink to="/pinia">Pinia</NuxtLink></li>

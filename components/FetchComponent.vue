@@ -15,7 +15,7 @@
 export default {
   name: 'FetchComponent',
   setup() {
-    const { data, error, isFetching } = useFetch('https://cursosdedesarrollo.com/pactometro/resultados.json');
+    let { data, error, isFetching } = useFetch('https://cursosdedesarrollo.com/pactometro/resultados.json');
 
     return {
       data,

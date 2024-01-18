@@ -9,4 +9,10 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./store/**'],
   },
+  runtimeConfig: {
+    public: {
+      hello: 'world',
+      testValue: 'default'
+    },
+  }
 })
