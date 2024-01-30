@@ -24,7 +24,7 @@ describe('App', async () => {
         const page = await createPage('/about')
         expect(page.url()).toContain('about')
         await page.screenshot({ path: 'screenshot.png' });
-        // console.log(page.html())
+        console.log(page)
         expect(page.getByText("About")).toBeTruthy()
     })
 })
